@@ -1,4 +1,5 @@
 const request = require('request')
+const chalk=require('chalk')
 
 const forecast = (latitude, longitude, callback) => {
     const url = 'http://api.weatherstack.com/current?access_key=0e1014e10593b66e53a5fe5644b4b246&query=' + latitude + ',' + longitude
@@ -11,9 +12,8 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find location', undefined)
         } else {
             debugger
-            callback(undefined, ' It is currently '+body.current.weather_descriptions[0] + ' and ' + body.current.temperature + ' degress out')
+            callback(undefined, ' It is currently '+body.current.weather_descriptions[0] + ' and ' + body.current.temperature + ' degress out and humidity is :'+body.current.humidity)
         }
     })
 }
-console.log('dummy changed from git')
 module.exports = forecast
