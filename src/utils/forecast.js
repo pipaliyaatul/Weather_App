@@ -15,5 +15,5 @@ const forecast = (latitude, longitude, callback) => {
         }
     })
 }
-console.log('dummy')
+console.log('dummy changed from git')
 module.exports = forecast
